@@ -10,12 +10,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Kernel
-        uses: lss4/KernelSU_Action_pstar@Lineage_pstar
+        uses: Diva-Room/KernelSU_Action@main
         with:
           kernel_url: 'https://github.com/MotorolaMobilityLLC/kernel-msm'
           kernel_branch: 'master'
           config: 'vendor/boston_defconfig'
           arch: 'arm64'
           ksu: true
-          ksu_tag: 'main'
+          ksu_version: 'main'
           boot_img_url: 'https://filebin.net/cebns0iwysbn1ug8'
