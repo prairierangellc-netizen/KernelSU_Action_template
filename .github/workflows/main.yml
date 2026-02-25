@@ -1,0 +1,21 @@
+name: Build Boston Kernel
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Kernel
+        uses: magojohnji/KernelSU_Action_template@main
+        with:
+          kernel-url: 'https://github.com/MotorolaMobilityLLC/kernel-msm'
+          kernel-branch: 'master'
+          config: 'vendor/boston_defconfig'
+          arch: 'arm64'
+          ksu: true
+          susfs: true
+          boot-img-url: 'https://filebin.net/cebns0iwysbn1ug8'
